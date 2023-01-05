@@ -1,10 +1,12 @@
 FROM ghcr.io/orvice/ubuntu-full:master as builder
 
-WORKDIR /tmp
+RUN mkdir /opt/soapbox
 
-RUN curl -L https://gitlab.com/soapbox-pub/soapbox/-/jobs/artifacts/v1.3.0/download?job=build-production -o /tmp/soapbox-fe.zip
+WORKDIR /opt/soapbox
 
-RUN mkdir /opt/soapbox && unzip soapbox-fe.zip -o -d /opt/soapbox
+RUN wget -O soapbox-fe.zip https://gitlab.com/soapbox-pub/soapbox/-/jobs/artifacts/v1.3.0/download?job=build-production  
+
+RUN  unzip soapbox-fe.zip
 
 FROM ghcr.io/orvice/nginx-vue:master
 
