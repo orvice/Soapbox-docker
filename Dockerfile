@@ -14,4 +14,6 @@ RUN  touch /var/run/nginx.pid && \
      chown -R nginx:nginx /var/cache/nginx /var/run/nginx.pid
 USER nginx
 
+RUN mkdir -p /var/cache/nginx/client_temp
+
 COPY --from=builder /opt/soapbox /usr/share/nginx/html
