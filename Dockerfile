@@ -8,8 +8,6 @@ RUN wget -O soapbox-fe.zip https://gitlab.com/soapbox-pub/soapbox/-/jobs/artifac
 
 RUN  unzip soapbox-fe.zip
 
-FROM ghcr.io/orvice/nginx-vue:master
-
-USER root
+FROM ghcr.io/nginxinc/nginx-unprivileged:1.23.3-perl
 
 COPY --from=builder /opt/soapbox /usr/share/nginx/html
