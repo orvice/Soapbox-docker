@@ -10,4 +10,4 @@ RUN  unzip soapbox-fe.zip
 
 FROM ghcr.io/nginxinc/nginx-unprivileged:1.23.3-perl
 
-COPY --from=builder /opt/soapbox /usr/share/nginx/html
+COPY --from=builder /opt/soapbox/static /usr/share/nginx/html
