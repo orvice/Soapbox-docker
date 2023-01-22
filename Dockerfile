@@ -10,4 +10,6 @@ RUN  unzip soapbox-fe.zip
 
 FROM nginx
 
+USER root
+
 COPY --from=builder /opt/soapbox /usr/share/nginx/html
