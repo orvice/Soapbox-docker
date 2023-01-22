@@ -4,7 +4,7 @@ RUN mkdir /opt/soapbox
 
 WORKDIR /opt/soapbox
 
-RUN wget -O soapbox-fe.zip https://gitlab.com/soapbox-pub/soapbox/-/jobs/artifacts/v1.3.0/download?job=build-production  
+RUN wget -O soapbox-fe.zip https://gitlab.com/soapbox-pub/soapbox/-/jobs/artifacts/v3.1.0/download?job=build-production  
 
 RUN  unzip soapbox-fe.zip
 
